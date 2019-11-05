@@ -4,19 +4,19 @@ const router=express.Router();
 const UsuarioController = require("../api/controllers/Usuarios.controller");
 const PublicacionController = require("../api/controllers/Publicaciones.controllers");
 
-router.get("/getUsuarios", UsuarioController.get);
-router.get("/getUsuarioID/:id", UsuarioController.getByID);
+router.get("/Usuarios", UsuarioController.get);
+router.get("/Usuario/:id", UsuarioController.getByID);
 
-router.get("/getPublicaciones",PublicacionController.get);
-router.get("/getPublicaciones/:id",PublicacionController.getByID);
+router.get("/Publicaciones",PublicacionController.get);
+router.get("/Publicacion/:id",PublicacionController.getByID);
 
-router.post("/saveUsuario", UsuarioController.post);
-router.post("/savePublicacion", PublicacionController.post);
+router.post("/Usuario", UsuarioController.post);
+router.post("/Publicacion", PublicacionController.post);
 
-router.put("/updateUsuario/:id", UsuarioController.put);
-router.put("/updatePublicacion/:id", PublicacionController.put);
+router.put("/Usuario/:id", UsuarioController.put);
+router.put("/Publicacion/:id", PublicacionController.put);
 
-router.delete("/deleteUsuario/:id",UsuarioController.delete);
-router.delete("/deletePublicacion/:id",PublicacionController.delete);
+router.delete("/Usuario/:id",UsuarioController.delete);
+router.delete("/Publicacion/:id",PublicacionController.delete);
 
 module.exports = router;

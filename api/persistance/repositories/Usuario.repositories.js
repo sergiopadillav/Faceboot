@@ -11,18 +11,18 @@ module.exports.save = async function(usuario){
     return respuesta;
  }
 
- module.exports.getByID = async function(id,usuario){
-    const respuesta = await usurioSchema.findById(id, {$set:usuario}, {new:true});
+ module.exports.getByID = async function(id){
+    const respuesta = await usurioSchema.findById(id);
     return respuesta;
  }
 
 
  module.exports.update = async function(id,usuario){
-   const respuesta = await usurioSchema.findByIdAndUpdate(id, {$set:usuario},{new:true});
+   const respuesta = await usurioSchema.findByIdAndUpdate(id, {$set:usuario}, {new:true});
    return respuesta;
 }
 
- module.exports.delete = async function(id, usuario){
-    const respuesta = await usurioSchema.findByIdAndDelete(id,{$set:usuario}, {new:true});
+ module.exports.delete = async function(id){
+    const respuesta = await usurioSchema.findByIdAndDelete(id);
     return respuesta;
  }

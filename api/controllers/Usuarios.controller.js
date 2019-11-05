@@ -21,7 +21,7 @@ module.exports.get = async function(request, response){
 
 module.exports.getByID = async function(request, response){
     try{
-        const result = await UsuarioRepositories.save(request.params.id);
+        const result = await UsuarioRepositories.getByID(request.params.id);
         response.status(200).json(result);
     }catch(err){
         response.status(500).json("Error obteniendo usuario");
@@ -30,7 +30,7 @@ module.exports.getByID = async function(request, response){
 
 module.exports.put = async function(request, response){
     try{
-        let usuario= req.body;
+        let usuario= request.body;
         const result = await UsuarioRepositories.update(request.params.id, usuario);
         response.status(200).json(result);
     }catch(err){
@@ -40,8 +40,7 @@ module.exports.put = async function(request, response){
 
 module.exports.delete = async function(request, response){
     try{
-        let usuario = request.body;
-        const result = await UsuarioRepositories.delete(request.params.id, usuario);
+        const result = await UsuarioRepositories.delete(request.params.id);
         response.status(200).json(result);
     }catch(err){
         response.status(500).json("Error borrando usuario");

@@ -12,7 +12,7 @@ nombre: { type: String, required: true, maxlength: 50},
    sexo:{ type: String, required: true, maxlength: 1},
    contrasenia:{ type: String, required: true, maxlength: 35},
    //formato de la fecha
-   fechaNacimiento: { type: Date, default: Date.now },
+   fechaNacimiento: { type: Date, default: Date.now , require:false},
    //HACER ENUM O HACER ARREGLO.
    generosMusicales:{type: String, required: false ,enum:generosEnum.getAll() },
    peliculasFavoritas: { type: [{

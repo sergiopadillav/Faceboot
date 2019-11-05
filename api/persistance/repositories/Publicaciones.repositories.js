@@ -1,8 +1,8 @@
 const publicacionesSchema = require("../schemas/publicaciones.schema");
 
 module.exports.save = async function(publicacion){ 
-    const newUsuario = new publicacionesSchema(usuario);
-    const result = await newUsuario.save();
+    const newPublicacion = new publicacionesSchema(publicacion);
+    const result = await newPublicacion.save(publicacion);
     return result;
  }
 
@@ -11,8 +11,8 @@ module.exports.save = async function(publicacion){
     return respuesta;
  }
 
- module.exports.getByID = async function(id,publicacion){
-    const respuesta = await publicacionesSchema.findById(id, {$set:publicacion}, {new:true});
+ module.exports.getByID = async function(id){
+    const respuesta = await publicacionesSchema.findById(id);
     return respuesta;
  }
 
@@ -22,7 +22,7 @@ module.exports.save = async function(publicacion){
  }
 
 
- module.exports.delete = async function(id, publicacion){
-    const respuesta = await publicacionesSchema.findByIdAndDelete(id,{$set:publicacion}, {new:true});
+ module.exports.delete = async function(id){
+    const respuesta = await publicacionesSchema.findByIdAndDelete(id);
     return respuesta;
  }
