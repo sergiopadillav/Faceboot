@@ -14,7 +14,7 @@ const PublicacionesSchema= new Schema({
     comentarios: { type: [{
         texto: { type: String, required: true, maxlength: 300 },
         createdAt: { type: Date,required: false, default: Date.now },
-        autor: { type: String, required: true, maxlength: 35}
+        autor: { type: ObjectId, ref: "Usuario" }
     }]}
 }, {timestamps: true});
 

@@ -18,6 +18,15 @@ module.exports.get = async function(request, response){
         response.status(500).json("Error obteniendo publicacion");
     }
 }
+//AUN NO QUEDAS BEBE, PERO QUEDARAS
+module.exports.getTags = async function (request,response){
+    try{
+        const result = await PublicacionesRepositories.getTags(request.params.id);
+        response.status(200).json(result);
+    }catch(err){
+        response.status(500).json("Error al obtener los tags");
+    }
+}
 
 module.exports.getByID = async function(request, response){
     try{
@@ -47,3 +56,5 @@ module.exports.delete = async function(request, response){
         response.status(500).json("Error borrando publicacion");
     }
 }
+
+
