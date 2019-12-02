@@ -1,8 +1,8 @@
 const tokens = require("./tokens");
 
 exports.tokenMiddleware = function(req, res, next){
-    let token = req.headers["x-acces-token"];
-    if(token){
+    const token = req.headers.authorization;
+    if(typeof token!=='undefined'){
             tokens.validateToken(token).then(result=>{
                 next();
             }).catch(err=>{

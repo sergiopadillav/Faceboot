@@ -12,13 +12,13 @@ nombre: { type: String, required: true, maxlength: 50},
    sexo:{ type: String, required: true, maxlength: 1},
    contrasenia:{ type: String, required: true, maxlength: 35},
    //formato de la fecha
-   fechaNacimiento: { type: Date, default: Date.now , require:false},
-   generosMusicales:{type: String, required: false ,enum:generosEnum.getAll() },
+   fechaNacimiento: { type: Date, default: Date.now , require:true},
+   generosMusicales:{type: String, required: true ,enum:generosEnum.getAll() },
    peliculasFavoritas: { type: [{
-    nombre: { type: String, required: true, maxlength: 65 },
+    nombre: { type: String, required: false, maxlength: 65 },
 }], required: false },
 usuariosAmigos: { type: [{
-    usuario: { type: ObjectId, ref: "Usuario" }
+    usuarioAmigo: { type: ObjectId, ref: "Usuario" }
 }]}
 
 }, {timestamps: true});

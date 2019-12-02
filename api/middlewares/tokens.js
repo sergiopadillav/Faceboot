@@ -1,9 +1,9 @@
 const jwt = require("jsonwebtoken");
 const secretPhrase = "f4c3b0oTw3Bt0k3n";
 
-exports.generateToken = function(user){
+exports.generateToken = function(user,nombreUsuario){
     
-    return jwt.sign(user, secretPhrase,{expiresIn: "2m" });
+    return jwt.sign({id:user,usuario:nombreUsuario}, secretPhrase,{expiresIn: "2h" });
 }
 
 //MANEJO CON ASYNC/AWAIT
